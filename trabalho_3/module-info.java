@@ -1,4 +1,4 @@
-module com.trabalho3 {
+module com.trabalho_3 {
     requires java.net.http;
     requires com.google.gson;
     requires org.apache.httpcomponents.httpclient;
@@ -7,5 +7,5 @@ module com.trabalho3 {
     requires javafx.fxml;
 
     opens com.trabalho3 to javafx.fxml;
-    exports com.trabalho3;
+    exports com.trabalho_3;
 }
