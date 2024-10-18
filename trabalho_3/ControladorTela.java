@@ -1,4 +1,4 @@
-package com.trabalho_3;
+package com.trabalho3;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -60,25 +60,28 @@ public class ControladorTela {
             
             Clientes cliente = new Clientes();
             
-            String nome = campoNome.getText();
-            String cep = campoCEP.getText();
-            String telefone = campoTelefone.getText();
-            String numero = campoNumero.getText();
-            String rua = campoRua.getText();
-            String cidade = campoCidade.getText();
-            String estado = campoEstado.getText();
+            cliente.setNome(campoNome.getText());
+        cliente.setTelefone(campoTelefone.getText());
+        Endereco endereco = new Endereco(
+            campoCEP.getText(),
+            campoRua.getText(),  
+            campoNumero.getText(), 
+            campoCidade.getText(), 
+            campoEstado.getText()  
+        );
 
-            if (nome.isEmpty() || cep.isEmpty() || telefone.isEmpty()) {
-                mensagemErro("Campos obrigatórios não preenchidos");
-                return;
-            }
+        cliente.setEndereco(endereco); 
 
-            Endereco endereco = new Endereco(cep, rua, numero, cidade, estado);
+        if (cliente.getNome().isEmpty() || cliente.getTelefone().isEmpty() || cliente.getEndereco().getCep().isEmpty()) {
+            mensagemErro("Campos obrigatórios não preenchidos");
+            return;
+        }
             
             listaClientes.add(cliente);
             campoN.setText(String.valueOf(cliente.getCodigo()));
             
             mensagemErro("Cliente cadastrado com sucesso!");
+            mostrarClientes(cliente);
             
         } catch (Exception e) {
             mensagemErro("Não foi possível gerar o cliente: " + e.getMessage());
@@ -116,4 +119,16 @@ public class ControladorTela {
         alert.setContentText(message);
         alert.showAndWait();
     }
+    
+    private void mostrarClientes(Clientes cliente) {
+        System.out.println("Cliente cadastrado:");
+        System.out.println("Nome: " + cliente.getNome() + 
+                           ", Telefone: " + cliente.getTelefone() + 
+                           ", Endereco: " + cliente.getEndereco().getRua() + 
+                           ", Numero: " + cliente.getEndereco().getNumero() +
+                           ", Cidade: " + cliente.getEndereco().getCidade() + 
+                           ", Estado: " + cliente.getEndereco().getEstado());
+    }
+    
+    
 }
