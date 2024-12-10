@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trabalho_final.PrimaryController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane prefHeight="374.0" prefWidth="600.0">
+         <children>
+            <Text layoutX="184.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro de Usuário">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <TextField fx:id="campoNomeUsuario" layoutX="102.0" layoutY="145.0" prefHeight="26.0" prefWidth="427.0" />
+            <TextField fx:id="campoLogin" layoutX="102.0" layoutY="199.0" prefHeight="26.0" prefWidth="427.0" />
+            <TextField fx:id="campoSenha" layoutX="102.0" layoutY="253.0" prefHeight="26.0" prefWidth="427.0" />
+            <Text layoutX="43.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" />
+            <Text layoutX="43.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
+            <Text layoutX="46.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" />
+            <Button layoutX="47.0" layoutY="320.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="26.0" prefWidth="80.0" text="Voltar" />
+            <Button layoutX="449.0" layoutY="320.0" mnemonicParsing="false" onAction="#InserirUsuario" prefHeight="26.0" prefWidth="80.0" text="OK" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
